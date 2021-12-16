@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .todo{
+            border: 1px;
+            padding: 2%;
+            width: 30;
+            float: left;
+            hight:200px;
+        }
+        .img-fluid{
+            max-width: 100%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=ssss<sc, initial-scale=1.0">
+    <title>Document</title>
+    <div id='app'>todo list</div>
+</head>
+<body>
+    <script>
+              var todo=[{name:'iphone',color:"red",cost:50000},
+        {name:'iphone',color:"red",cost:50800},
+        {name:'micromax',color:"green",cost:50200},
+        {name:'Redmi',color:"yellow",cost:50700},
+        {name:'sony',color:"pink",cost:50900},
+        {name:'oneplus',color:"red",cost:50000},
+        {name:'iphone',color:"green",cost:50500}]
+        var html = '<br>';          
+        var x = 0;      
+        todo.forEach(function (v) {        
+            html += '<div class="item"><h3>' + v.name + '</h3><img src="http://placehold.it/350x150" class="img-fluid"><div>' + v.color + ' <a href="#" class="productItem" data-name="' + v.name + '" data-s="' + v.color + '"  data-price="' + v.cost + '" data-id="' + x + '" >Add to Cart</a></div></div>';        
+            x++;        
+            console.log(v);      
+        })      
+        document.getElementById('app').innerHTML += html;
+    </script>
+</body>
+</html>

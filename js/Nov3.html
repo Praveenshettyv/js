@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css"></style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>hello</title>
+</head>
+<body>
+    <div id='app'><h1>hello praveen good morning praveen</h1></div>
+    SEARCH FOR  :<input type="text" id="stext"><br>
+    REPLACED WITH:<input type="text" id="rtext"><br>
+    <button value="submit"  onclick="fun()">Submit</button>
+	<script>
+        function fun(){ 
+        var s=document.getElementById('stext').value;
+        var r=document.getElementById('rtext').value;
+        var out=document.getElementById('app').inn;
+        var re=new RegExp(s,'gi');
+        console.log(re);
+        var result=out.match(re);
+        if(result){
+            var rr=out.replace(s,r);
+          document.getElementById('app').innerHTML=rr;
+          console.log(rr);
+        }
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reg(){
+            var fisrtname=document.getElementById("firstname").value;
+            var lastname=document.getElementById("lastname").value;
+            var rollnumber=document.getElementById("rollnumber").value;
+            var subject=document.getElementById("subject").value;
+
+            var table=document.getElementById("rgtable");
+            var row=table.insertRow();
+            var fisrtnamecell=row.insertCell(0);
+            var lastnamecell=row.insertCell(1);
+            var rollnumbercell=row.insertCell(2);
+            var subjectcell=row.insertCell(3);
+            
+            fisrtnamecell.innerHtml=fisrtname;
+            lastnamecell.innerHtml=lastname;
+            rollnumbercell.innerHtml=rollnumber;
+            subjectcell.innerHtml=subject;
+
+            document.getElementById("firstname").value;
+            document.getElementById("lastname").value;
+            document.getElementById("rollnumber").value;
+
+        }
+        function preparetable(){
+            var table=document.getElementById("rgtable");
+            var row=table.insertRow();
+            var fisrtnamecell=row.insertCell(0);
+            var lastnamecell=row.insertCell(1);
+            var rollnumbercell=row.insertCell(2);
+            var subjectcell=row.insertCell(3);
+
+        }
+    </script>
+    
+</body>
+</html>

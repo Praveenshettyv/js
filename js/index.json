@@ -1,0 +1,23 @@
+{ 
+    "users":
+    [
+       {
+         "name":"raju",
+          "age":25,
+          "gender":"male",
+          "aboutAuthor":"good"
+
+        },
+        {
+            "name":"praveen",
+             "age":45,
+             "gender":"male",
+             "aboutAuthor":"nice"
+           },       {
+            "name":"ravi",
+             "age":278,
+             "gender":"male",
+             "aboutAuthor":"bad"
+           }
+    ]
+}

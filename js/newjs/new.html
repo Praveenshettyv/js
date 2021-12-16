@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        th{
+            background-color: aqua;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        Hello welcome to ajav script
+    </div>
+    <table clas="datujna">
+        <tr>
+            <tr  class="bg-info">
+                <th>Name</th>
+                <th>Age</th>
+                <th>Birthday</th>
+            </tr>
+        
+        </tr>
+        <tbody id="apps"></tbody>
+    </table>
+    
+    <script>
+     var myArray = [
+	    {'name':'Michael', 'age':'30', 'birthdate':'11/10/1989'},
+	    {'name':'Mila', 'age':'32', 'birthdate':'10/1/1989'},
+	    {'name':'Paul', 'age':'29', 'birthdate':'10/14/1990'},
+	    {'name':'Dennis', 'age':'25', 'birthdate':'11/29/1993'},
+	    {'name':'Tim', 'age':'27', 'birthdate':'3/12/1991'},
+	    {'name':'Erik', 'age':'24', 'birthdate':'10/31/1995'},
+	]
+	
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('apps')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].name}</td>
+							<td>${data[i].age}</td>
+							<td>${data[i].birthdate}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+    </script>
+    
+</body>
+</html>

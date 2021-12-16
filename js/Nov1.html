@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+    <div id="app">welcome</div>
+    <input type="button" onclick="fun()" value="click">
+	<script>
+        var str="fgx bbnjliyufgcvbnjLgihbmjl hello 8428565622JL 45120";
+        var out=document.getElementById("app");
+        function  fun(){
+            var p=/jl/;
+            var s=str.match(p)
+            
+            out.innerHTML=`helo `+s+` g`;
+            s.forEach(function(e){
+                console.log(e);
+            })
+      }    
+    </script>
+    
+
+</body>
+</html>

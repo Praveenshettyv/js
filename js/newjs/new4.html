@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <table id="tableid">
+    <tr>
+        <td>userId</td>
+        <td>id</td>
+        <td>title</td>
+    </tr>
+    <tbody id="tbody"></tbody>
+
+    </table>
+    <button class="btn">ajax call</button>
+    <div id="app"></div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+   <script>
+      var count = 0;
+	
+	$("#btn").click(function(){
+		fetchDataAndDisplay();
+	});
+	
+	function fetchDataAndDisplay(){
+		$.ajax({
+			url:"https://jsonplaceholder.typicode.com/posts",
+			method:"GET"
+		}).done(function(data){
+			var start = count > 0 ? 5 * count : count;
+			var end = start + 5;
+			var str = '';
+			for(var i=start; i<end; i++){
+				str += '<div class="item-details">' + 
+						'User Id is = ' + data[i].userId + '<br />' +
+						'Id is= ' + data[i].id + '<br />' +
+						'Titile is = ' + data[i].title + '<br />' +
+						'</div>';
+			}
+			
+			if(end == data.length){
+				count = 0;
+				$(".display-data").empty();
+				$(".display-data").append("List Traversed. Start over!");
+				return;
+			}
+			
+			count++;
+			$(".display-data").empty();
+			$(".display-data").append(str);
+		})
+	}
+   </script>
+			  
+</body>
+</html>

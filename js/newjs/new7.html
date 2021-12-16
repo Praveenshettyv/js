@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+       #bg-info{
+          width: 20px;
+          height: 50px;
+          background-color: blueviolet;
+        }
+        th{
+            background-color: aqua;
+            width: 150px;
+            height: 20px;
+        }::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">fetch th data in covid users api</div>
+    <div id="app">
+        Hello welcome to java script
+    </div>
+    <table clas="datujna">
+        <tr>
+            <tr  class="bg-info">
+                <th>date</th>
+                <th>states</th>
+                <th>positive</th>
+                <th>negative</th>
+                <th>pending</th>
+                <th>hospitalizedCurrently</th>
+                <th>hospitalizedCumulative</th>
+                <th>inIcuCurrently</th>
+            </tr>
+        
+        </tr>
+        <tbody id="apps"></tbody>
+    </table>
+    <script>
+        //
+         window.onload = init;
+
+        function init() {
+            loadJSON();
+            
+            
+        }
+      
+        function loadJSON(callback) {
+            var xHR = new XMLHttpRequest;
+            xHR.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var myObj = JSON.parse(this.responseText);
+                    console.log(myObj);//
+                    buildTable(myObj);
+                    
+	      function buildTable(data){
+            var table = document.getElementById('apps')
+
+            for (var i = 0; i < data.length; i++){
+                var row = `<center><tr>
+							<td>${data[i].date}</td>
+							<td>${data[i].states}</td>
+							<td>${data[i].positive}</td>
+                            <td>${data[i].negative}</td>
+                            <td>${data[i].pending}</td>
+                            <td>${data[i].hospitalizedCurrently}</td>
+                            <td>${data[i].hospitalizedCumulative}</td>
+                            <td>${data[i].inIcuCurrently}</td>
+					  </tr></center>`
+                      table.innerHTML += row
+
+
+		}
+	}
+                    
+                }
+            }
+            xHR.open('GET', 'https://api.covidtracking.com/v1/us/daily.json', true);
+            xHR.send();
+          
+        }
+
+        </script>
+</body>
+</html>

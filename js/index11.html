@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <tit>hello</tit>
+    </head>
+    <body>
+        <h1>mail id checking here</h1><br>
+        <div id=app>
+            Email.id:<input type="text" id ="mail" placeholder="mail id"><br>
+            <button  onclick="myfun()">CLick me </button>
+        </div>
+        <script>
+            function myfun(){
+            var out=document.getElementById('app');
+            var email=document.getElementById('mail').value;
+            var check=email.match(/([a-zA-Z0-9._-]+@[a-zA-Z._-]+\.[a-zA-Z._-]+)/gi);
+             if(check){
+              out.innerHTML=`email id is true`;
+                }
+            else{
+                out.innerHTML=`email id is inavlied`
+    }
+
+}
+
+         
+
+        </script>
+    </body>
+</html>
